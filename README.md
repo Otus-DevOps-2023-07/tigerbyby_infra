@@ -1,7 +1,7 @@
 # tigerbyby_infra
 tigerbyby Infra repository
 
-# Homework #3
+## Homework #3
 ```
 bastion_IP = 51.250.94.187  
 someinternalhost_IP = 10.128.0.28
@@ -37,7 +37,7 @@ alias someinternalhost="ssh someinternalhost"
 ### Add SSL for pritunl:
 https://51.250.94.187.nip.io/
 
-# Homework #4
+## Homework #4
 
 ```
 testapp_IP = 51.250.6.201
@@ -56,3 +56,7 @@ yc compute instance create \
   --metadata-from-file user-data=startup.yaml
 ```
 
+## Homework #5
+
+Installed packer
+Configured *.pkr.hcl  and *.pkr.hcl templates
