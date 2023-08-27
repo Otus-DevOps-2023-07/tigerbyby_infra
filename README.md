@@ -64,6 +64,11 @@ yc compute instance create \
 - Configured variables config
 - Configured immutable template and run yc script
 ### Run command
+- main task
+```
+cd packer/ && packer build -var-file=variables.json ubuntu16.json
+```
+- additional task
 ```
 bash packer/config-scripts/create-reddit-vm.sh
 ```
