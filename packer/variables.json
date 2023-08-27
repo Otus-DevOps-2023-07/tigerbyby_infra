@@ -3,6 +3,6 @@
     "source_image_family": "ubuntu-1604-lts",
     "service_account_key_file": "/home/slava/key.json",
     "zone": "ru-central1-a",
-    "subnet": "e9bihbae82c2t78mrthq",
+    "subnet_id": "e9bihbae82c2t78mrthq",
     "use_ipv4_nat": "true"
 }

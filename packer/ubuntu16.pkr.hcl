@@ -24,13 +24,13 @@ build {
 
   provisioner "shell" {
     name            = "ruby"
-    script          = "./config-scripts/install_ruby.sh"
+    script          = "./scripts/install_ruby.sh"
     execute_command = "sudo {{.Path}}"
   }
 
   provisioner "shell" {
     name            = "mongodb"
-    script          = "./config-scripts/install_mongodb.sh"
+    script          = "./scripts/install_mongodb.sh"
     execute_command = "sudo {{.Path}}"
   }
 }
