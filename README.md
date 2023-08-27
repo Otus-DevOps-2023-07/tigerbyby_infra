@@ -58,5 +58,12 @@ yc compute instance create \
 
 ## Homework #5
 
-Installed packer
-Configured *.pkr.hcl  and *.pkr.hcl templates
+### What done 
+- Installed packer
+- Configured *.pkr.hcl  and *.pkr.hcl templates
+- Configured variables config
+- Configured immutable template and run yc script
+### Run command
+```
+bash packer/config-scripts/create-reddit-vm.sh
+```
