@@ -72,3 +72,20 @@ cd packer/ && packer build -var-file=variables.json ubuntu16.json
 ```
 bash packer/config-scripts/create-reddit-vm.sh
 ```
+## Homework #6
+
+### What done
+- Installed terraform
+- Installed yandex module for terraform
+- Configured main file
+- Configured variables file and tfvars
+- Created load balancer
+### Run command
+- For create instance
+```
+terraform init && terraform apply
+```
+- For destroy instance
+```
+terraform destroy
+```
