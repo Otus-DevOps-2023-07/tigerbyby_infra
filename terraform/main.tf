@@ -1,58 +1,37 @@
 ######################
-# terraform {
-#   required_providers {
-#     yandex = {
-#       source  = "yandex-cloud/yandex"
-#       version = "~> 0.95.0"
-#     }
-#   }
-# }
-provider "yandex" {
-  service_account_key_file = var.service_account_key_file
-  cloud_id                 = var.cloud_id
-  folder_id                = var.folder_id
-  zone                     = var.zone
-}
-
-resource "yandex_compute_instance" "app" {
-  name = "reddit-app-${count.index}"
-  count = var.app_count
-  resources {
-    cores  = 2
-    memory = 2
-  }
-
-
-  boot_disk {
-    initialize_params {
-      # Указать id образа созданного в предыдущем домашем задании
-      image_id = var.image_id
+terraform {
+  required_providers {
+    yandex = {
+      source  = "yandex-cloud/yandex"
+      version = "~>0.95.0"
     }
   }
+}
 
-  network_interface {
-    # Указан id подсети default-ru-central1-a
-    subnet_id = var.subnet_id
-    nat       = true
-  }
+provider "yandex" {
+  service_account_key_file = var.service_account_key_file
+  cloud_id  = var.cloud_id
+  folder_id = var.folder_id
+  zone      = var.zone
+}
 
-  metadata = {
-    ssh-keys = "ubuntu:${file(var.public_key_path)}"
-  }
+module "vpc" {
+  source = "./modules/vpc"
+}
 
-  connection {
-    type  = "ssh"
-    host  = self.network_interface.0.nat_ip_address
-    user  = "ubuntu"
-    agent = false
-    # путь до приватного ключа
-    private_key = file(var.private_key_path)
-  }
-  provisioner "file" {
-    source      = "files/puma.service"
-    destination = "/tmp/puma.service"
-  }
-  provisioner "remote-exec" {
-    script = "files/deploy.sh"
-  }
+module "app" {
+  source = "./modules/app"
+  subnet_id = module.vpc.vpc_id
+  public_key_path = var.public_key_path
+  app_disk_image = var.app_disk_image
+#  subnet_id = var.subnet_id
+}
+
+module "db" {
+  source = "./modules/db"
+  subnet_id = module.vpc.vpc_id
+  public_key_path = var.public_key_path
+  db_disk_image = var.db_disk_image
+#  subnet_id = var.vpc_id
+#  depends_on = [modules.vpc]
 }

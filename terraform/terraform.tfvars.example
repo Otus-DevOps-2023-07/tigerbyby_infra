@@ -6,3 +6,5 @@ public_key_path          = "~/.ssh/yc.pub"
 subnet_id                = "e9bihbae8AAAAAAAAAAA"
 service_account_key_file = "key.json"
 app_count                = 2
+app_disk_image           = "fd85afAAAAAAAAAAAAAA"
+db_disk_image            = "fd85s1AAAAAAAAAAAAAA"
