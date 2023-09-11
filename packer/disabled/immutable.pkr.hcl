@@ -1,4 +1,4 @@
-source "yandex" "ubuntu16" {
+source "yandex" "immutable" {
   image_name = "reddit-full-${formatdate("MM-DD-YYYY", timestamp())}"
   image_family = "reddit-full"
   ssh_username = "ubuntu"
