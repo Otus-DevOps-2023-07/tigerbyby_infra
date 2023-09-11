@@ -3,8 +3,15 @@ variable public_key_path {
 }
   variable db_disk_image {
   description = "Disk image for reddit db"
-  default = "reddit-db-base"
+  default     = "reddit-db-base"
 }
 variable subnet_id {
   description = "Subnets for modules"
+}
+variable private_key_path {
+  description = "path to private key"
+}
+variable "db_host_ip" {
+  description = "data base host ip"
+  default     = "127.0.0.1"
 }
