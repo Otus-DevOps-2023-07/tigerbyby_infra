@@ -38,7 +38,7 @@ variable "app_disk_image" {
   description = "Disk image for reddit app"
   default     = "reddit-app-base"
 }
-variable prov {
+variable "prov" {
   description = "using provisioner"
-  default = true
+  default     = true
 }
