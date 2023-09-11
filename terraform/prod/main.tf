@@ -20,6 +20,7 @@ module "vpc" {
 }
 
 module "app" {
+#  prod = var.prod
   source          = "../modules/app"
   subnet_id       = module.vpc.vpc_id
   public_key_path = var.public_key_path
