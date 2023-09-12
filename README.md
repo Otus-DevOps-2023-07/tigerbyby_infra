@@ -90,6 +90,21 @@ terraform init && terraform apply
 terraform destroy
 ```
 ## Homework #7
+### What done
+- Added vpc network for app
+- Сonfiguration files are separated
+- Created modules for app, db and vpc
+- Maked provisioning
+### Run command
+```
+export ACCESS_KEY="<access_key>"
+export SECRET_KEY="<secret_key>"
+cd terraform/prod/
+terraform init -backend-config="access_key=$ACCESS_KEY" -backend-config="secret_key=$SECRET_KEY"
+terraform plan
+terraform apply
+```
+## Homework #8
 
 ### What done
 - Installed ansible
