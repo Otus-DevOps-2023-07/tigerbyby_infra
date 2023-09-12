@@ -104,6 +104,7 @@ terraform init -backend-config="access_key=$ACCESS_KEY" -backend-config="secret_
 terraform plan
 terraform apply
 ```
+
 ## Homework #8
 
 ### What done
@@ -127,4 +128,3 @@ ansible app -m git -a \
 ansible-playbook clone.yml
 
 ```
-
