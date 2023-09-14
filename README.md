@@ -115,7 +115,7 @@ terraform apply
 - Created bash script for dynamic inventory.json
 - Modified ansible.cfg for inventory.json
 
-###Run commands
+### Run commands
 ```
 ansible all -m ping 
 ansible app -m command -a 'ruby -v; bundler -v'
@@ -129,3 +129,24 @@ ansible-playbook clone.yml
 
 ```
 
+## Homework #9
+
+### What done
+- Created templates for playbooks
+- Created handlers for playbooks
+- Created playbooks in single or multiple files
+- Integrated ansible to packer provisioning
+
+### Run commands
+```
+ansible-playbook reddit_app.yml --check --limit db
+ansible-playbook reddit_app.yml --limit db
+ansible-playbook reddit_app.yml --check --limit app
+ansible-playbook reddit_app.yml --limit app
+ansible-playbook reddit_app.yml --limit app --tags app-tag
+ansible-playbook reddit_app.yml --limit app --tags deploy-tag
+ansible-playbook site.yml
+packer build -var-file=packer/variables.json packer/db.json
+packer build -var-file=packer/variables.json packer/app.json
+
+```
