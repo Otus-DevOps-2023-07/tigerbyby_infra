@@ -20,6 +20,7 @@
           dest: /etc/mongod.conf
           mode: 0644
         tags: db-tag # <-- Список тэгов для задачи
+        notify: restart mongod
 
 #===========================
       - name: Add unit file for Puma
