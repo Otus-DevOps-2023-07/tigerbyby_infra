@@ -1,7 +1,7 @@
 {
     "folder_id": "<folder_id>",
     "source_image_family": "ubuntu-1604-lts",
-    "service_account_key_file": "key.json.example",
+    "service_account_key_file": "./packer/key.json.example",
     "zone": "<zone>",
     "subnet": "<subnet>",
     "use_ipv4_nat": "true"
