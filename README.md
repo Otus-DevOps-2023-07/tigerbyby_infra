@@ -104,3 +104,28 @@ terraform init -backend-config="access_key=$ACCESS_KEY" -backend-config="secret_
 terraform plan
 terraform apply
 ```
+
+## Homework #8
+
+### What done
+- Installed ansible
+- Created inventory and inventory.yml files
+- Added ansible.cfg
+- Created clone.yml 
+- Created bash script for dynamic inventory.json
+- Modified ansible.cfg for inventory.json
+
+###Run commands
+```
+ansible all -m ping 
+ansible app -m command -a 'ruby -v; bundler -v'
+ansible app -m shell -a 'ruby -v; bundler -v'
+ansible db -m systemd -a name=mongod
+ansible db -m service -a name=mongod
+ansible app -m apt -a name=git
+ansible app -m git -a \
+'repo=https://github.com/express42/reddit.git dest=/home/appuser/reddit'
+ansible-playbook clone.yml
+
+```
+
