@@ -23,10 +23,6 @@
                 "a=1; while [ -n \"$(pgrep apt-get)\" ]; do echo $a; sleep 1s; a=$(expr $a + 1); done",
                 "echo Done."
             ]
-        },
-        {
-            "type": "ansible",
-            "playbook_file": "ansible/packer_db.yml"
         }
     ]
 }

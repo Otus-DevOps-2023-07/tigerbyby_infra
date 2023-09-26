@@ -8,3 +8,5 @@ variables.json
 provider.tf
 *.retry
 key.json
+jdauphant.nginx
+vault.key

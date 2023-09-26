@@ -150,3 +150,22 @@ packer build -var-file=packer/variables.json packer/db.json
 packer build -var-file=packer/variables.json packer/app.json
 
 ```
+
+## Homework #10
+
+### What done
+- Learned ansible-galaxy init
+- Created directory tree
+- Created environment directory
+
+### Run commands
+```
+ansible-galaxy init app
+ansible-galaxy init db
+ansible-playbook -i environments/prod/inventory deploy.yml
+ansible-playbook playbooks/site.yml
+ansible-galaxy install -r environments/stage/requirements.yml
+ansible-vault encrypt environments/prod/credentials.yml
+ansible-vault encrypt environments/stage/credentials.yml
+
+```
