@@ -169,3 +169,20 @@ ansible-vault encrypt environments/prod/credentials.yml
 ansible-vault encrypt environments/stage/credentials.yml
 
 ```
+
+## Homework #11
+
+### What done
+- Installed virtualbox
+- Installed vagrant
+- Created vagrantfile for app and db
+- Changed ansible roles and playbooks
+
+### Run commands
+```
+vagrant up
+vagrant status
+vagrant destroy -f
+
+```
+
